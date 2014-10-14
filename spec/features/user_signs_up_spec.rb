@@ -7,8 +7,8 @@ feature 'User signs up for Blocipedia' do
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password', match: :prefer_exact
     click_button 'Sign up'
-    expect(page).to have_content('A message with a confirmation link has been sent to your email address. Please open the link to activate your account.')
-    #expect(page).to have_content('Welcome to Bloccitoff')
+    expect(page).to have_content('Hello user@example.com!')
+    expect(page).to have_content('Sign Out')
   end
 end
 
