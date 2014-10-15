@@ -7,8 +7,7 @@ feature 'User signs up for Blocipedia' do
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password', match: :prefer_exact
     click_button 'Sign up'
-    expect(page).to have_content('Hello user@example.com!')
-    expect(page).to have_content('Sign Out')
+    expect(page).to have_content("Blocipedia")
   end
 end
 

@@ -1,0 +1,5 @@
+%h3= @wiki.title
+%p= @wiki.body
+%br
+= link_to "Edit wiki", edit_wiki_path(@wiki)
+= link_to "All wikis", wikis_path(@wikis) 
