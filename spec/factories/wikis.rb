@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :wiki do
-    title "MyString"
-    body "MyText"
+    title "Travel"
+    body "Top 10 destinations"
   end
 end
