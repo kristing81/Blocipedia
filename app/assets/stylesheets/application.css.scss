@@ -1,0 +1,36 @@
+@import "bootstrap";
+
+body {
+  margin: 10px;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
+}
+
+.user-info {
+  margin-top: 5px;
+}
+
+.nav {
+  margin-top: 5px;
+}
+.jumbotron{
+  margin-top: 50px;
+  border-radius: 5px;
+  background-color: #FFCCCC;
+  color: #665252;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
+}
+
+.btn-primary {
+  background-color: #665252;
+  border-color: #473939;
+  
+}
+
+a:link {
+    color: #997A7A;
+}
+
+a:hover {
+    color: #FF9999;
+}
+
