@@ -1,5 +1,5 @@
 %h3= markdown @wiki.title
 %p= markdown @wiki.body
 %br
-= link_to "Edit wiki", edit_wiki_path(@wiki)
-= link_to "All wikis", wikis_path(@wikis) 
+= link_to "Edit wiki", edit_wiki_path(@wiki), class: 'btn btn-success'
+= link_to "All wikis", wikis_path(@wikis), class: 'btn btn-default' 
