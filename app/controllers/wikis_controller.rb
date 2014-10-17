@@ -4,7 +4,10 @@ class WikisController < ApplicationController
   end
 
   def show
-    @wiki = Wiki.find(params[:id])
+    @wiki = Wiki.friendly.find(params[:id])
+    if request.path != wiki_path(@wiki)
+      redirect_to @article, status: :moved_permanently
+    end
   end
 
   def new

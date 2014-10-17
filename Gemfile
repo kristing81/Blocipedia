@@ -29,8 +29,12 @@ gem 'figaro', '1.0'
 gem 'haml-rails'
 
 gem 'redcarpet'
+
 gem 'albino'
+
 gem 'nokogiri'
+
+gem 'friendly_id'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
