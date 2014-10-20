@@ -37,6 +37,8 @@ gem 'nokogiri'
 
 gem 'friendly_id'
 
+gem 'stripe'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
