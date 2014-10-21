@@ -6,4 +6,10 @@ class User < ActiveRecord::Base
 
   has_many :roles
   has_many :wikis, through: :roles
+
+  scope :premium, -> { where(premium: true) }
+
+  def premium?
+    self.role.eql? "premium"
+  end
 end

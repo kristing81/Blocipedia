@@ -1,4 +1,8 @@
 class ChargesController < ApplicationController
+
+  def index
+    @charges = Stripe::Charge.all
+  end
   
 
   def new

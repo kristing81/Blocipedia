@@ -1,0 +1,12 @@
+%h4 Charges
+%table.table.table-bordered
+  %thead
+    %th Customer:
+    %th Amount:
+    %th Description:
+  %tbody 
+    -@charges.each do |charge|
+      %td= charge.customer
+      %td= charge.amount
+      %td= charge.description
+      %tr
