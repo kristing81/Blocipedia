@@ -2,7 +2,9 @@
 
 body {
   margin: 10px;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
+  border: 10px;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  background-color: #F2F2F2;
 }
 
 .user-info {
@@ -26,8 +28,14 @@ body {
   
 }
 
+.btn-success {
+  background-color: #759175;
+  border-color: #473939;
+}
+
 a:link {
     color: #997A7A;
+
 }
 
 a:hover {

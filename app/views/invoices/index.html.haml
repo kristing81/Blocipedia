@@ -1,0 +1,13 @@
+.page-header
+%h4 Past Invoices
+%table.table.table-hover
+  %thead
+    %tr
+      %th Amount
+      %th Paid in
+  %tbody
+    - @invoices.each do |invoice|
+      %tr
+        %td= number_to_currency(invoice.amount / 100.0)
+        %td= invoice.created_at.to_s(:long)
+

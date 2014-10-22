@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141021103718) do
+ActiveRecord::Schema.define(version: 20141022103750) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(version: 20141021103718) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "invoices", force: true do |t|
-    t.integer  "invoice_id"
-    t.string   "email"
+    t.integer  "user_id"
+    t.integer  "amount"
+    t.string   "description"
     t.datetime "created_at"
-    t.string   "stripe_customer_token"
     t.datetime "updated_at"
   end
 

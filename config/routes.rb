@@ -1,4 +1,7 @@
 Blocipedia::Application.routes.draw do
+
+  resources :invoices, only: [:index]
+
   resources :wikis
   resources :charges, only: [:new, :create, :index]
   
