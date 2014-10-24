@@ -12,4 +12,16 @@ class User < ActiveRecord::Base
   def make_premium
     self.update_attribute(:premium, true)
   end 
+
+  def collaborator?
+   role == 'collaborator'
+  end
+ 
+ def premium_user?
+   role == 'premium_user'
+ end
+
+ def admin?
+  role == 'admin'
+ end
 end

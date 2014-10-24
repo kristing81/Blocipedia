@@ -11,3 +11,5 @@
         %td= number_to_currency(invoice.amount / 100.0)
         %td= invoice.created_at.to_s(:long)
 
+= link_to "Pay your membership", new_charge_path, class: 'btn btn-success'
+

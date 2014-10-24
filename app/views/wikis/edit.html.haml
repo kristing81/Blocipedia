@@ -1,2 +1,3 @@
 %h1 Edit wiki
-= render partial: 'form', locals: { wiki: @wiki} 
+- if policy(@wiki).edit?
+  = render partial: 'form', locals: { wiki: @wiki} 
