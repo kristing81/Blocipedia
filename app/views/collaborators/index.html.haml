@@ -1,0 +1,18 @@
+%h1
+  = @wiki.title
+  collaborators
+%table.table-hover
+  %thead
+    %tr
+      %th User
+      %th Email
+  %tbody
+    - @collaborators.each do |collaborator|
+      %tr
+        %td= collaborator.user.name
+        %td= collaborator.user.email
+%br/
+= link_to 'New Collaborator', new_wiki_collaborator_path, class: 'btn btn-success'
+|
+\#{link_to 'Back', wikis_path}
+
