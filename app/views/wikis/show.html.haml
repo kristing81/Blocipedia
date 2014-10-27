@@ -2,5 +2,16 @@
 %p= markdown @wiki.body
 %br
 = link_to "Edit wiki", edit_wiki_path(@wiki), class: 'btn btn-success'
+- if current_user.premium?
+  = link_to "Add Collaborators", new_wiki_collaborator_path(@wiki), class: 'btn btn-info'
+
 = link_to "Delete wiki", @wiki, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this wiki?'}
-= link_to "All wikis", wikis_path(@wikis), class: 'btn btn-default' 
+= link_to "All wikis", wikis_path(@wikis), class: 'btn btn-default'
+
+/ - @users.each do |user|
+/     %ul.collaboratorCheckbox
+/       = check_box_tag "wiki[collaborator_ids][]", user.id
+/       = user.username || user.email
+/   %p.wikiCheckbox
+/     = f.check_box :is_private
+/     = f.label "Private"
