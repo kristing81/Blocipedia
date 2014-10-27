@@ -1,8 +1,5 @@
-= form_for [@wiki, @collaborator] do |f|
-  = f.label :name
-  = f.text_field :name, class: 'form-control'
- 
-  =f.label :email
-  =f.text_field :email,class: 'form-control'
-  %br
-  =f.submit "Add collaborator to wiki", class: 'btn btn-success'
+= form_tag wiki_collaborators_path(wiki), class: 'form-vertical' do 
+  .form-control.form-group
+    = text_field_tag :collaborator_name, nil, placeholder: "Name"
+    = text_field_tag :collaborator_email, nil, :placeholder => "Email"
+    = submit_tag "Add Collaborator", class: "btn btn-success"

@@ -17,9 +17,10 @@ body {
 .jumbotron{
   margin-top: 50px;
   border-radius: 5px;
-  background-color: #FFCCCC;
+  background-image: url(https://unsplash.imgix.net/uploads/1412238370909393b4a19/79f023f1?q=75&fm=jpg&s=0d39e32b84bfacd752f109035a811830);
   color: #665252;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+
 }
 
 .btn-primary {
@@ -44,5 +45,8 @@ a:link {
 
 a:hover {
     color: #FF9999;
+}
+.table-bordered {
+  border-radius: 3px;
 }
 

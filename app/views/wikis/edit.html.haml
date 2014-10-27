@@ -1,3 +1,10 @@
-%h1 Edit wiki
+%h3= markdown @wiki.title
+%p= markdown @wiki.body
+%br
+%h3 Edit wiki
+%row
+  .col-md-4
+  .col-md-8
 - if policy(@wiki).edit?
+  
   = render partial: 'form', locals: { wiki: @wiki} 

@@ -1,12 +1,12 @@
-%br
-.jumbotron
-  %h1
-    Blocipedia
-  %p 
-    Blocipedia is a place to share ideas and collaborate with friends and colleagues
-  %p
-  = link_to "Sign In", new_user_session_path, class: 'btn btn-primary'
-  or
-  \#{link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary'} today!
+%body
+  .container
+    .jumbotron
+      %h1.col-lg-8 
+        Blocipedia
+        %p.col-lg-4
+          Blocipedia is a place to share ideas and collaborate with friends and colleagues 
+          = link_to "Sign In", new_user_session_path, class: 'btn btn-primary'
+          or
+          \#{link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary'} today!
 
 
