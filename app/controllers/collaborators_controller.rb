@@ -1,4 +1,5 @@
 class CollaboratorsController < ApplicationController
+  attr_accessor :user_id, :wiki_id
   def index
     @wiki = Wiki.find(params[:wiki_id])
     @collaborators = Collaborator.all
@@ -11,7 +12,8 @@ class CollaboratorsController < ApplicationController
 
   def create
     @wiki = Wiki.find(params[:wiki_id])
-    @collaborator = Collaborator.create(user_id: params[:user_id], wiki_id:  @wiki.id)
+    @user = Wiki.find(params(:user_email))
+    @collaborator = @wiki.roles.build(user: @user, role: "collaborator")
     if @collaborator.save
       flash[:notice] = "Collaborator was saved succesfully."
       redirect_to @wiki
@@ -20,7 +22,6 @@ class CollaboratorsController < ApplicationController
       render :new
     end
   end
-
     # find a user with an email matching what is specified in the parmas
     # if exists, create a new role on the wiki for that user as a collaborator.
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141027114315) do
+ActiveRecord::Schema.define(version: 20141028025744) do
 
   create_table "collaborators", force: true do |t|
     t.string   "name"
@@ -88,6 +88,8 @@ ActiveRecord::Schema.define(version: 20141027114315) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.integer  "user_id"
+    t.boolean  "private",    default: false
   end
 
   add_index "wikis", ["slug"], name: "index_wikis_on_slug"

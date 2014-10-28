@@ -1,4 +1,4 @@
 class Role < ActiveRecord::Base
-  belongs_to :wiki_id
-  belongs_to :user_id
+  belongs_to :wiki
+  belongs_to :user
 end
