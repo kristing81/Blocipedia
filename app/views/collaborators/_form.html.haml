@@ -1,0 +1,7 @@
+.container
+  .add-collab
+    = form_tag wiki_collaborators_path(wiki), class: 'form-vertical' do 
+      .form-control.form-group
+        = text_field_tag :name, nil, placeholder: "Name"
+        = text_field_tag :email, nil, placeholder: "Email"
+        = submit_tag "Add Collaborator", class: "btn btn-success btn-sm"

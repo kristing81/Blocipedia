@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024022651) do
+ActiveRecord::Schema.define(version: 20141029073743) do
+
+  create_table "collaborators", force: true do |t|
+    t.string   "name"
+    t.integer  "wiki_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "user_email"
+  end
+
+  add_index "collaborators", ["wiki_id"], name: "index_collaborators_on_wiki_id"
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -36,14 +47,14 @@ ActiveRecord::Schema.define(version: 20141024022651) do
 
   create_table "roles", force: true do |t|
     t.string   "role"
-    t.integer  "wiki_id_id"
-    t.integer  "user_id_id"
+    t.integer  "wiki_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "roles", ["user_id_id"], name: "index_roles_on_user_id_id"
-  add_index "roles", ["wiki_id_id"], name: "index_roles_on_wiki_id_id"
+  add_index "roles", ["user_id"], name: "index_roles_on_user_id"
+  add_index "roles", ["wiki_id"], name: "index_roles_on_wiki_id"
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -65,8 +76,10 @@ ActiveRecord::Schema.define(version: 20141024022651) do
     t.datetime "updated_at"
     t.boolean  "premium",                default: false
     t.string   "role"
+    t.integer  "collaborator_id"
   end
 
+  add_index "users", ["collaborator_id"], name: "index_users_on_collaborator_id"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
@@ -76,6 +89,8 @@ ActiveRecord::Schema.define(version: 20141024022651) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.integer  "user_id"
+    t.boolean  "private",    default: false
   end
 
   add_index "wikis", ["slug"], name: "index_wikis_on_slug"

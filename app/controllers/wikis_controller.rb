@@ -1,4 +1,7 @@
 class WikisController < ApplicationController
+
+  before_filter :authenticate_user!
+
   def index
     @wikis = Wiki.all
     authorize @wikis
@@ -6,9 +9,7 @@ class WikisController < ApplicationController
 
   def show
     @wiki = Wiki.friendly.find(params[:id])
-    if request.path != wiki_path(@wiki)
-      redirect_to @article, status: :moved_permanently
-    end
+    @collaborators = @wiki.collaborators
   end
 
   def new
@@ -17,7 +18,7 @@ class WikisController < ApplicationController
   end
 
   def create
-    @wiki = Wiki.new(params.require(:wiki).permit(:title, :body))
+    @wiki = Wiki.new(wiki_params)
     authorize @wiki
     if @wiki.save
       flash[:notice] = "Your wiki was saved"
@@ -34,11 +35,11 @@ class WikisController < ApplicationController
   end
 
   def update
-    @wiki = Wiki.find(params[:id])
+    @wiki = Wiki.friendly.find(params[:id])
     authorize @wiki
-    if @wiki.update_attributes(params.require(:wiki).permit(:title, :body))
+    if @wiki.update_attributes(wiki_params)
       flash[:notice] = "Wiki updated"
-      redirect_to @wiki
+      redirect_to edit_wiki_path(@wiki)
     else
       flash[:error] = "There was an error saving the wiki.  Please try again"
       render :edit
@@ -46,7 +47,7 @@ class WikisController < ApplicationController
   end
 
   def destroy
-    @wiki = Wiki.find(params[:id])
+    @wiki = Wiki.friendly.find(params[:id])
     title = @wiki.title
 
     authorize @wiki
@@ -57,5 +58,10 @@ class WikisController < ApplicationController
       flash[:error] = "There was an error deleting the wiki."
       render :show 
   end  
+  end
+
+  private
+  def wiki_params
+    params.require(:wiki).permit(:title, :body, :private, :user_id)
   end
 end
