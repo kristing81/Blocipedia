@@ -2,7 +2,7 @@ class CollaboratorsController < ApplicationController
   attr_accessor :user_id, :wiki_id
   def index
     @wiki = Wiki.find(params[:wiki_id])
-    @collaborators = Collaborator.all
+    @collaborators = Collaborator.where(:id => :wiki_id)
     @collaborators = @wiki.collaborators
   end
 
@@ -12,25 +12,24 @@ class CollaboratorsController < ApplicationController
 
   def create
     @wiki = Wiki.find(params[:wiki_id])
-    @user = Wiki.find(params(:user_email))
-    @collaborator = @wiki.roles.build(user: @user, role: "collaborator")
-    if @collaborator.save
-      flash[:notice] = "Collaborator was saved succesfully."
+    @user = User.where(email: params[:email]).first
+    if @user.present?
+      @wiki.roles.create(role: "collaborator", user_id: @user.id)
+      flash[:notice] = "Collaborator was saved successfully."
       redirect_to @wiki
     else
       flash[:error] = "There was an error saving your collaborator. Please try again."
       render :new
     end
   end
-    # find a user with an email matching what is specified in the parmas
-    # if exists, create a new role on the wiki for that user as a collaborator.
+
 
   def destroy
     @wiki = Wiki.find(params[:wiki_id])
-    @collaborator = Collaborator.find(params[:id])
-    if @collaborator.destroy
-      flash[:notice] = "#{collaborator.name} was deleted successfully"
-      redirect_to collaborator_index_path
+    
+    if @wiki.roles.where(user_id: params[:id]).first.destroy
+      flash[:notice] = "Collaborator was deleted successfully"
+      redirect_to @wiki
     else
       flash[:error] = "There was an error deleting your collaborator.  Please try again."
       render :show

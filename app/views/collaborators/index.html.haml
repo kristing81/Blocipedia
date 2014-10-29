@@ -1,17 +1,23 @@
-%h3
-  = @wiki.title
-  collaborators
-%table.table-hover.col-md-6
-  %tr
-    %thead
-      %th Name
+.container
+  %h3
+    = @wiki.title
+    collaborators
+  %table.table-hover
     %tr
-      - @collaborators.each do |collaborator|
-        %td= collaborator.name
-        %td= link_to "Remove", {:action => 'delete', :id => collaborator.id}, :class => 'action delete'
+      %thead
+        %th{:width => "250px"} Name
+        %th{:width => "250px"} Email
+        %th{:width => "250px"} Remove from list
+      %tr
+        - @collaborators.each do |collaborator|
+          %tr
+            %td= collaborator.name
+            %td= collaborator.email
+            %td= link_to "Remove", wiki_collaborator_url(@wiki, collaborator), method: :delete, class: "btn btn-danger btn-xs"
+          %tr
         %br
 
-= link_to 'New Collaborator', new_wiki_collaborator_path, class: 'btn btn-success'
-= link_to 'Back', wiki_path(@wiki), class: 'btn btn-info'
+  = link_to 'New Collaborator', new_wiki_collaborator_path, class: 'btn btn-success btn-sm'
+  = link_to 'Back', wiki_path(@wiki), class: 'btn btn-info btn-sm'
 
 

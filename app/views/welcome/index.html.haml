@@ -1,12 +1,30 @@
 %body
   .container
     .jumbotron
-      %h1.col-lg-8 
+      %h1
         Blocipedia
-        %p.col-lg-4
-          Blocipedia is a place to share ideas and collaborate with friends and colleagues 
-          = link_to "Sign In", new_user_session_path, class: 'btn btn-primary'
+        %p
+          Blocipedia is a place to share ideas and collaborate with friends  
+          = link_to "Sign In", new_user_session_path, class: 'btn btn-primary btn-sm'
           or
-          \#{link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary'} today!
-
-
+          \#{link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary btn-sm'} today!
+    .row
+      .col-md-6
+        %h3 Public Wikis
+        %p Create public wikis to share with the world! 
+        %br
+        %h3 Markdown Support
+        %p
+          Write your wikis with easy-to-use 
+          %a{:href => "http://daringfireball.net/projects/markdown/"} Markdown.
+      .col-md-6
+        %h3 Private Wikis
+        %p 
+          Create private wikis as a Blocipedia 
+          = link_to "premium member", new_charge_path
+        %br
+        %h3 Group Collaboration
+        %p 
+          Work with your 
+          %strong dream team 
+          to build your wiki.

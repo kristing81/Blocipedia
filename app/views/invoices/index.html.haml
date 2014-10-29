@@ -1,16 +1,16 @@
 .container
-.page-header
-%h4 Past Invoices
-%table.table.table-hover.table-bordered
-  %thead
-    %tr
-      %th Amount
-      %th Paid in
-  %tbody
-    - @invoices.each do |invoice|
-      %tr
-        %td= number_to_currency(invoice.amount / 100.0)
-        %td= invoice.created_at.to_s(:long)
+  .page-header
+    %h4 Past Invoices
+    %table.table.table-hover.table-bordered.invoices
+      %thead
+        %tr
+          %th Amount
+          %th Paid in
+      %tbody
+        - @invoices.each do |invoice|
+          %tr
+            %td= number_to_currency(invoice.amount / 100.0)
+            %td= invoice.created_at.to_s(:long)
 
-= link_to "Pay your membership", new_charge_path, class: 'btn btn-success'
+    = link_to "Pay your membership", new_charge_path, class: 'btn btn-success btn-sm'
 
