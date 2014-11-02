@@ -11,13 +11,11 @@
       %tr
         - @collaborators.each do |collaborator|
           %tr
-            %td= collaborator.name
-            %td= collaborator.email
-            %td= link_to "Remove", wiki_collaborator_url(@wiki, collaborator), method: :delete, class: "btn btn-danger btn-xs"
+            %td= collaborator.name if collaborator
+            %td= collaborator.email if collaborator
+            %td= link_to "Remove",  wiki_collaborator_url(@wiki, collaborator), method: :delete, class: "btn btn-danger btn-xs"
           %tr
         %br
 
   = link_to 'New Collaborator', new_wiki_collaborator_path, class: 'btn btn-success btn-sm'
   = link_to 'Back', wiki_path(@wiki), class: 'btn btn-info btn-sm'
-
-
