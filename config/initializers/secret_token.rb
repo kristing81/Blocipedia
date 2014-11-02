@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Blocipedia::Application.config.secret_key_base = 'c2eebf1d05ac7eaea480dab96aa2d556acec7cb1542dd135444cfad6336c852a7d466ccf3c6a1dec1430b3182804c7a6a03d7e63181854336376802c1fcfbacd'
+Blocipedia::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
