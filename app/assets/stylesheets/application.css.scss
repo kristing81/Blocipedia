@@ -1,10 +1,9 @@
-@import "bootstrap";
+@import "lumen";
 
 body {
   margin: 10px;
   border: 10px;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  background-color: #F2F2F2;
+  background-color: #FCFCFC;
 }
 
 .user-info {
@@ -15,112 +14,6 @@ body {
   margin-top: 5px;
 }
 
-.jumbotron{
-  width: 1050px;
-  margin-top: 50px;
-  border-radius: 5px;
-  background-image: url(https://unsplash.imgix.net/uploads/1412238370909393b4a19/79f023f1?q=75&fm=jpg&s=0d39e32b84bfacd752f109035a811830);
-  color: #665252;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-
-.btn-primary {
-  background-color: #665252;
-  border-color: #2F1A4D;  
-}
-
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open .dropdown-toggle.btn-primary{
-  background-color: #524242;
-  border-color: #2F1A4D;
-} 
-
-.btn-default {
- border-color: #2F1A4D;  
-}
-
-.btn-default:hover,
-.btn-default:focus,
-.btn-default:active,
-.btn-default.active,
-.open .dropdown-toggle.btn-default{
-   border-color: #2F1A4D;
-} 
-
-.btn-info {
-  background-color: #80B2CC;
-  border-color: #2F1A4D;
-  color: #000
-}
-
-.btn-info:hover,
-.btn-info:focus,
-.btn-info:active,
-.btn-info.active,
-.open .dropdown-toggle.btn-info{
-  background-color: #668EA3;
-  border-color: #2F1A4D;
-  color: #000
-}
-
-.btn-success {
-  background-color: #859D85;
-  border-color: #2F1A4D;
-  color: #FFF;
-}
-
-.btn-success:hover,
-.btn-success:focus,
-.btn-success:active,
-.btn-success.active,
-.open .dropdown-toggle.btn-success{
-  background-color:#5D6E5D;
-  border-color: #2F1A4D;
-  color: #FFF;
-}
-
-.btn-danger {
-  background-color: #8D1919;
-  border-color: #473939;
-  color: #FFF;
-}
-
-.btn-danger:hover,
-.btn-danger:focus,
-.btn-danger:active,
-.btn-danger.active,
-.open .dropdown-toggle.btn-danger {
-  background-color: #631212;
-  border-color: #473939;
-  color: #FFF;
-}
-
-.btn-warning {
-  background-color: #F0F2BF;
-  border-color: #2F1A4D;
-  color: #000;
-}
-
-.btn-warning:hover,
-.btn-warning:focus,
-.btn-warning:active,
-.btn-warning.active,
-.open .dropdown-toggle.btn-warning {
-  background-color: #D8DAAC;
-  border-color: #2F1A4D;
-  color: #000;
-}
-
-a:link {
-    color: #2F1A4D;
-}
-
-a:hover {
-    color: #2F1A4D;
-}
 
 .table-bordered {
   border-radius: 3px;

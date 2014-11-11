@@ -1,11 +1,9 @@
 .container
   .wikis-index
     %h3 Wikis
-    .row.col-md-6 
+    %ul.list-group
     -@wikis.each do |wiki|
-      .media
-      .media-body
-      %h4.media-heading
+      %h4.media-headingli.list-group-item
         = link_to wiki.title, wiki_path(wiki)
         .col-md-offset-1
         %small Created #{time_ago_in_words(wiki.created_at)} ago by #{current_user.name}

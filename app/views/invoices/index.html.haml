@@ -1,7 +1,7 @@
 .container
   .page-header
     %h4 Past Invoices
-    %table.table.table-hover.table-bordered.invoices
+    %table.table.table-striped.table-hover.invoices
       %thead
         %tr
           %th Amount
@@ -11,6 +11,6 @@
           %tr
             %td= number_to_currency(invoice.amount / 100.0)
             %td= invoice.created_at.to_s(:long)
-
+    %br
     = link_to "Pay your membership", new_charge_path, class: 'btn btn-success btn-sm'
 

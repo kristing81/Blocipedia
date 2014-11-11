@@ -1,9 +1,13 @@
 = form_for @wiki do |f|
+  .form-group
   = f.label :title
   = f.text_field :title, class: 'form-control'
- 
-  =f.label :body
+  .form-group
+  = f.label :body
   =f.text_area :body, rows: 8, class: 'form-control'
+  .form-group
+  = f.label :private, "Private"
   = f.check_box :private
+
   %br
   =f.submit "Save", class: 'btn btn-success btn-sm'
