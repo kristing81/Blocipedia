@@ -1,1 +1,0 @@
-Blocipedia is a SaaS Wiki creation and collaboration app built during my apprenticeship at [Bloc](https://www.bloc.io). You can view the live app [here](https://kristingonzalez-blocipedia.herokuapp.com/).
